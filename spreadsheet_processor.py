@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 from constants import APPEND_HEADERS, ADDRESS_INF_HEADERS, SLEEP_TIME, GDRIVE_DEFAULT_IMAGE
 
@@ -34,6 +35,7 @@ def get_full_address_from_heading_pos(row, address_pos):
 
 def get_street_head_positions(header):
     positions = []
+    missing_headers = []
 
     print("--------------------------------------------------")
     print("Checking Address Information Headings...\n")
@@ -48,11 +50,14 @@ def get_street_head_positions(header):
             pos = header.index(head_item)
             print(f"Column: {pos}(0 based index)\n")
         except ValueError:
+            missing_headers.append(f'"{head_item}"')
             print(
                 f"Error, Please check if there is {head_item} heading in the first row\n")
             pass
         positions.append(pos)
 
+    if len(missing_headers) != 0:
+        sys.exit(f"Column Missing Error: {', '.join(missing_headers)}\nExiting...")
     print(f"address information headings indexes: {positions}\n\n")
     return positions
 

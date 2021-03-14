@@ -1,12 +1,16 @@
 from API_KEY import GEOCODE_API_KEY, STREET_IAMGE_KEY, MAPS_SECRET_KEY
 # Test Files
+ENV_PATH = 'env'
+TOKEN_PATH = f"{ENV_PATH}/token.json"
+CREDENTIALS_PATH = f"{ENV_PATH}/credentials.json"
 
 SRC_FILE_NAME = '19396 - Mailing List draft v2 - for images'
 
 
 ASSETS_DIR = "assets/"
 DOWNLOADED_DIR = 'assets\\noziptest\\ivorydownloads\\'
-GDRIVE_DIR = 'Q:\Shared drives\StreetViewImages\\'
+GDRIVE_FOLDER = 'StreetViewImages'
+GDRIVE_DIR = f'Q:\Shared drives\{GDRIVE_FOLDER}\\'
 
 DES_FILE_SUFFIX = " - IMAGES"
 DATA_FILE_FORMAT = '.csv'

@@ -43,15 +43,15 @@ def get_image_url(address):
     print(image_url)
 
     file_name = f"{address}"
-    full_image_path = f"{DOWNLOADED_DIR}{file_name}{DOWNLOADED_EXTENSION}"
+    # full_image_path = f"{DOWNLOADED_DIR}{file_name}{DOWNLOADED_EXTENSION}"
     gdrive_image_location = f"{GDRIVE_DIR}{file_name}{DOWNLOADED_EXTENSION}"
     # file_existing = os.path.isfile(full_image_path)
 
     print("file_name")
     print(file_name)
 
-    print("full_image_path")
-    print(full_image_path)
+    # print("full_image_path")
+    # print(full_image_path)
 
     print("gdrive_image_location")
     print(gdrive_image_location)
@@ -62,7 +62,7 @@ def get_image_url(address):
     print('file_existing?')
     file_existing = os.path.isfile(gdrive_image_location)
     print(file_existing)
-    os.makedirs(DOWNLOADED_DIR, exist_ok=True)
+    # os.makedirs(DOWNLOADED_DIR, exist_ok=True)
 
     print("downloading image")
     download_res = download_image(image_url, gdrive_image_location)
@@ -98,11 +98,11 @@ def get_satellite_image_url(address):
     image_url = extract_satellite_view_image_url(address)
 
     file_name = f"{address}-satellite"
-    full_image_path = f"{DOWNLOADED_DIR}{file_name}{DOWNLOADED_EXTENSION}"
+    # full_image_path = f"{DOWNLOADED_DIR}{file_name}{DOWNLOADED_EXTENSION}"
     gdrive_image_location = f"{GDRIVE_DIR}{file_name}{DOWNLOADED_EXTENSION}"
     # file_existing = os.path.isfile(full_image_path)
     file_existing = os.path.isfile(gdrive_image_location)
-    os.makedirs(DOWNLOADED_DIR, exist_ok=True)
+    # os.makedirs(DOWNLOADED_DIR, exist_ok=True)
 
     if file_existing == False:
         print("downloading satellite image")
